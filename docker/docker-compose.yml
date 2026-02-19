@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  cybersentinel:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: cybersentinel
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - DEMO_MODE=true
+      - DEMO_LOG_INTERVAL=1.5
+      - LOG_LEVEL=info
+    volumes:
+      - cybersentinel_data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/stats')" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  cybersentinel_data:

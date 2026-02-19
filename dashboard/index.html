@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSentinel – SOC Dashboard</title>
+    <meta name="description" content="AI-Driven Autonomous Cyber Defense – Real-Time Security Operations Center Dashboard">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">
+                <span class="logo-icon">🛡️</span>
+                <h1>CyberSentinel</h1>
+                <span class="tagline">AI-Driven Cyber Defense</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="connection-status" id="connectionStatus">
+                <span class="status-dot"></span>
+                <span class="status-text">Connecting...</span>
+            </div>
+            <div class="model-status" id="modelStatus">
+                <span class="model-dot"></span>
+                <span>Model: Loading</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stat-card">
+            <div class="stat-value" id="totalLogs">0</div>
+            <div class="stat-label">Total Logs</div>
+            <div class="stat-icon">📊</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="totalAlerts">0</div>
+            <div class="stat-label">Total Alerts</div>
+            <div class="stat-icon">🔔</div>
+        </div>
+        <div class="stat-card severity-low">
+            <div class="stat-value" id="countLow">0</div>
+            <div class="stat-label">LOW</div>
+            <div class="stat-icon">🟢</div>
+        </div>
+        <div class="stat-card severity-medium">
+            <div class="stat-value" id="countMedium">0</div>
+            <div class="stat-label">MEDIUM</div>
+            <div class="stat-icon">🟡</div>
+        </div>
+        <div class="stat-card severity-high">
+            <div class="stat-value" id="countHigh">0</div>
+            <div class="stat-label">HIGH</div>
+            <div class="stat-icon">🟠</div>
+        </div>
+        <div class="stat-card severity-critical">
+            <div class="stat-value" id="countCritical">0</div>
+            <div class="stat-label">CRITICAL</div>
+            <div class="stat-icon">🔴</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="activeThreats">0</div>
+            <div class="stat-label">Active Threats</div>
+            <div class="stat-icon">⚠️</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="suppressedCount">0</div>
+            <div class="stat-label">Suppressed</div>
+            <div class="stat-icon">🚫</div>
+        </div>
+    </section>
+
+    <!-- Main Panels -->
+    <main class="dashboard-grid">
+        <!-- Live Logs Panel -->
+        <section class="panel logs-panel">
+            <div class="panel-header">
+                <h2>📋 Live Log Stream</h2>
+                <span class="panel-counter" id="logCounter">0 entries</span>
+            </div>
+            <div class="panel-body" id="logStream">
+                <div class="empty-state">Waiting for log data...</div>
+            </div>
+        </section>
+
+        <!-- Alerts Panel -->
+        <section class="panel alerts-panel">
+            <div class="panel-header">
+                <h2>🚨 Live Alerts</h2>
+                <span class="panel-counter" id="alertCounter">0 alerts</span>
+            </div>
+            <div class="panel-body" id="alertStream">
+                <div class="empty-state">No alerts yet</div>
+            </div>
+        </section>
+
+        <!-- Response Actions Panel -->
+        <section class="panel actions-panel">
+            <div class="panel-header">
+                <h2>⚡ Response Actions</h2>
+                <span class="panel-counter" id="actionCounter">0 actions</span>
+            </div>
+            <div class="panel-body" id="actionStream">
+                <div class="empty-state">No response actions yet</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <span>CyberSentinel v1.0 – AI-Driven Autonomous Cyber Defense</span>
+        <span id="wsClients">0 clients connected</span>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

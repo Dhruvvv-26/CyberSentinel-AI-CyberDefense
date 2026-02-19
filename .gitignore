@@ -1,0 +1,50 @@
+# ─── Python ───────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyo
+*.pyd
+
+# ─── Virtual Environments ─────────────────────────
+cyberSentinel_Venv/
+venv/
+.venv/
+env/
+
+# ─── IDE / Editor ─────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ─── Raw Datasets (large files, re-downloadable) ──
+data/raw/
+data/processed/
+
+# ─── Model Artifacts (re-trainable) ───────────────
+data/models/*.joblib
+data/models/model_meta.json
+
+# ─── Runtime Logs ─────────────────────────────────
+data/logs/
+*.log
+
+# ─── Jupyter Notebooks Checkpoints ────────────────
+.ipynb_checkpoints/
+
+# ─── Environment Variables ────────────────────────
+.env
+
+# ─── Distribution / Build ────────────────────────
+dist/
+build/
+*.egg-info/
+*.egg
+
+# ─── Misc ─────────────────────────────────────────
+*.bak
+*.tmp
+.gemini/
